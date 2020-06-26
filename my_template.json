@@ -1,0 +1,197 @@
+[{
+        "type": "container",
+        "title": "Registry",
+        "description": "Docker image registry",
+        "categories": ["docker"],
+        "platform": "linux",
+        "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/registry.png",
+        "image": "registry:latest",
+        "ports": [
+            "5000/tcp"
+        ],
+        "volumes": ["/var/lib/registry"]
+    },
+    {
+        "type": "container",
+        "title": "Nginx",
+        "description": "High performance web server",
+        "categories": ["webserver"],
+        "platform": "linux",
+        "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/nginx.png",
+        "image": "nginx:latest",
+        "ports": [
+            "80/tcp",
+            "443/tcp"
+        ],
+        "volumes": ["/etc/nginx", "/usr/share/nginx/html"]
+    },
+    {
+        "type": "container",
+        "title": "Httpd",
+        "description": "Open-source HTTP server",
+        "categories": ["webserver"],
+        "platform": "linux",
+        "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/httpd.png",
+        "image": "httpd:latest",
+        "ports": [
+            "80/tcp"
+        ],
+        "volumes": ["/usr/local/apache2/htdocs/"]
+    },
+    {
+        "type": "container",
+        "title": "MySQL",
+        "description": "The most popular open-source database",
+        "categories": ["database"],
+        "platform": "linux",
+        "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mysql.png",
+        "image": "mysql:latest",
+        "env": [{
+            "name": "MYSQL_ROOT_PASSWORD",
+            "label": "Root password"
+        }],
+        "ports": [
+            "3306/tcp"
+        ],
+        "volumes": ["/var/lib/mysql"]
+    },
+    {
+        "type": "container",
+        "title": "MariaDB",
+        "description": "Performance beyond MySQL",
+        "categories": ["database"],
+        "platform": "linux",
+        "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mariadb.png",
+        "image": "mariadb:latest",
+        "env": [{
+            "name": "MYSQL_ROOT_PASSWORD",
+            "label": "Root password"
+        }],
+        "ports": [
+            "3306/tcp"
+        ],
+        "volumes": ["/var/lib/mysql"]
+    },
+    {
+        "type": "container",
+        "title": "PostgreSQL",
+        "description": "The most advanced open-source database",
+        "categories": ["database"],
+        "platform": "linux",
+        "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/postgres.png",
+        "image": "postgres:latest",
+        "env": [{
+                "name": "POSTGRES_USER",
+                "label": "Superuser"
+            },
+            {
+                "name": "POSTGRES_PASSWORD",
+                "label": "Superuser password"
+            }
+        ],
+        "ports": [
+            "5432/tcp"
+        ],
+        "volumes": ["/var/lib/postgresql/data"]
+    },
+    {
+        "type": "container",
+        "title": "Mongo",
+        "description": "Open-source document-oriented database",
+        "categories": ["database"],
+        "platform": "linux",
+        "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mongo.png",
+        "image": "mongo:latest",
+        "ports": [
+            "27017/tcp"
+        ],
+        "volumes": ["/data/db"]
+    },
+    {
+        "type": "container",
+        "title": "Elasticsearch",
+        "description": "Open-source search and analytics engine",
+        "categories": ["database"],
+        "platform": "linux",
+        "logo": "https://static-www.elastic.co/v3/assets/bltefdd0b53724fa2ce/blt5ebe80fb665aef6b/5ea8c8f26b62d4563b6ecec2/brand-elasticsearch-220x130.svg",
+        "image": "elasticsearch:latest",
+        "ports": [
+            "9200/tcp",
+            "9300/tcp"
+        ],
+        "volumes": ["/usr/share/elasticsearch/data"]
+    },
+    {
+        "type": "container",
+        "title": "Redis",
+        "description": "Open-source in-memory data structure store",
+        "categories": ["database"],
+        "platform": "linux",
+        "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/redis.png",
+        "image": "redis:latest",
+        "ports": [
+            "6379/tcp"
+        ],
+        "volumes": ["/data"]
+    },
+    {
+        "type": "container",
+        "title": "RabbitMQ",
+        "description": "Highly reliable enterprise messaging system",
+        "categories": ["messaging"],
+        "platform": "linux",
+        "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/rabbitmq.png",
+        "image": "rabbitmq:latest",
+        "ports": [
+            "5671/tcp",
+            "5672/tcp"
+        ],
+        "volumes": ["/var/lib/rabbitmq"]
+    },
+    {
+        "type": "container",
+        "title": "Magento 2",
+        "description": "Open-source e-commerce platform",
+        "categories": ["CMS"],
+        "platform": "linux",
+        "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/magento.png",
+        "image": "alankent/gsd:latest",
+        "ports": [
+            "80/tcp",
+            "3000/tcp",
+            "3001/tcp"
+        ],
+        "volumes": ["/var/www/html/"]
+    },
+    {
+        "type": "container",
+        "title": "Jenkins",
+        "description": "Open-source continuous integration tool",
+        "categories": ["continuous-integration"],
+        "platform": "linux",
+        "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/jenkins.png",
+        "image": "jenkins/jenkins:lts",
+        "ports": [
+            "8080/tcp",
+            "50000/tcp"
+        ],
+        "env": [{
+            "name": "JENKINS_OPTS",
+            "label": "Jenkins options"
+        }],
+        "volumes": ["/var/jenkins_home"]
+    },
+    {
+        "type": "stack",
+        "title": "Portainer Agent",
+        "description": "Manage all the resources in your Swarm cluster",
+        "note": "The agent will be deployed globally inside your cluster and available on port 9001.",
+        "categories": ["portainer"],
+        "platform": "linux",
+        "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/portainer.png",
+        "repository": {
+            "url": "https://github.com/portainer/templates",
+            "stackfile": "stacks/portainer-agent/docker-stack.yml"
+        }
+    }
+]
