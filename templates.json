@@ -39,7 +39,7 @@
     ],
     "volumes": ["/usr/local/apache2/htdocs/"]
   },
-   {
+  {
     "type": "container",
     "title": "MySQL",
     "description": "The most popular open-source database",
@@ -113,7 +113,7 @@
     ],
     "volumes": ["/data/db"]
   },
-   {
+  {
     "type": "container",
     "title": "Elasticsearch",
     "description": "Open-source search and analytics engine",
@@ -127,7 +127,7 @@
     ],
     "volumes": ["/usr/share/elasticsearch/data"]
   },
-   {
+  {
     "type": "container",
     "title": "Redis",
     "description": "Open-source in-memory data structure store",
@@ -154,7 +154,7 @@
     ],
     "volumes": ["/var/lib/rabbitmq"]
   },
-   {
+  {
     "type": "container",
     "title": "Magento 2",
     "description": "Open-source e-commerce platform",
@@ -189,7 +189,7 @@
     ],
     "volumes": ["/var/jenkins_home"]
   },
- {
+  {
     "type": "stack",
     "title": "Portainer Agent",
     "description": "Manage all the resources in your Swarm cluster",
@@ -201,5 +201,5 @@
       "url": "https://github.com/portainer/templates",
       "stackfile": "stacks/portainer-agent/docker-stack.yml"
     },
-  }
- ]
+   }
+]
