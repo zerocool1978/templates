@@ -200,6 +200,6 @@
     "repository": {
       "url": "https://github.com/portainer/templates",
       "stackfile": "stacks/portainer-agent/docker-stack.yml"
-    },
-   }
+    }
+  }
 ]
